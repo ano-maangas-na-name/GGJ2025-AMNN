@@ -238,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &160606253
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &527307338
 Transform:
   m_ObjectHideFlags: 0
@@ -620,6 +620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 635859351}
+  - component: {fileID: 635859352}
   m_Layer: 0
   m_Name: Countdown
   m_TagString: Untagged
@@ -647,6 +648,27 @@ Transform:
   - {fileID: 2068136770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &635859352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635859350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97788b82231e4545a1cfd5b4ed082e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countDownStartNumber: 4
+  countDownSprites:
+  - {fileID: 1242144615}
+  - {fileID: 1486663484}
+  - {fileID: 160606252}
+  - {fileID: 527307337}
+  fadeDuration: 0.2
+  scaleDuration: 0.2
+  holdDuration: 1
 --- !u!1 &711990536
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &956588239
 Animator:
   serializedVersion: 7
@@ -928,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1242144616
 Transform:
   m_ObjectHideFlags: 0
@@ -1015,7 +1037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1486663485
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2068136769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1393,9 +1415,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 711990537}
-        m_TargetAssemblyTypeName: SwitchScene, Assembly-CSharp
-        m_MethodName: OnPlayButtonClicked
+      - m_Target: {fileID: 635859352}
+        m_TargetAssemblyTypeName: RaceCountdown, Assembly-CSharp
+        m_MethodName: StartCountDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
