@@ -9,6 +9,8 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
+    private Rigidbody rb;
+
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
 
@@ -20,12 +22,21 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+    //Scripts
+    [SerializeField] private RaceManagerScript rms;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void FixedUpdate()
     {
         GetInput();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+        RigidbodyFreezeCheck();
     }
 
     private void GetInput()
@@ -78,5 +89,17 @@ public class CarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+
+    private void RigidbodyFreezeCheck()
+    {
+        if (rms.gameState == RaceManagerScript.GameState.PreGame)
+        {
+            rb.isKinematic = true;
+        }
+        else
+        {
+            rb.isKinematic = false;
+        }
     }
 }
