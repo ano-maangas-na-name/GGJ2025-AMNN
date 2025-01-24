@@ -28,6 +28,7 @@ public class CarController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = new Vector3(0f, -0.5f, 0f);
     }
 
     private void FixedUpdate()
