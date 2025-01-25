@@ -14,6 +14,8 @@ public class Player2Controller : MonoBehaviour
     InputAction moveAction;
     private Vector2 direction;
 
+    public bool slow = false;
+
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
 
@@ -51,15 +53,6 @@ public class Player2Controller : MonoBehaviour
     {
         direction = moveAction.ReadValue<Vector2>();
         //Debug.Log(direction);
-
-
-
-
-        // // Steering Input
-        // horizontalInput = Input.GetAxis("Horizontal");
-
-        // // Acceleration Input
-        // verticalInput = Input.GetAxis("Vertical");
 
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
@@ -121,4 +114,5 @@ public class Player2Controller : MonoBehaviour
         // }
 
     }
+
 }

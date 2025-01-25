@@ -13,6 +13,7 @@ public class Player3Controller : MonoBehaviour
     PlayerInput playerInput;
     InputAction moveAction;
     private Vector2 direction;
+    public bool slow = false;
 
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;

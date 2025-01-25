@@ -30,7 +30,7 @@ public class AbilityOrb : MonoBehaviour
         if (other.CompareTag("Player 1"))
         {
             Debug.Log("Soap Ability");
-
+            
             
         }
 

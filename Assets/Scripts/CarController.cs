@@ -108,8 +108,6 @@ public class CarController : MonoBehaviour
         wheelTransform.position = pos;
     }
 
-    public void TITe() { }
-
     // private void RigidbodyFreezeCheck()
     // {
     //     if (rms != null)
