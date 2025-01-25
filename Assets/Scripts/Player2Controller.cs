@@ -73,40 +73,39 @@ public class Player2Controller : MonoBehaviour
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
 
-        
 
 
-        //if (!speedIncrease && !slowed)
-        //{
-        //    rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
-        //}
 
-        //else if (slowed)
-        //{
-        //    rb.linearVelocity = rb.linearVelocity.normalized * 1;
-        //    rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 2f);
-        //    StartCoroutine(slowedFalse());
-        //}
+        if (!speedIncrease && !slowed)
+        {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
+        }
 
-        //else if (stunned)
-        //{
-        //    rb.linearVelocity = rb.linearVelocity.normalized * 0;
-        //    rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 0f);
-        //    StartCoroutine(stunnedFalse());
-        //}
+        else if (slowed)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * 1;
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 2f);
+            StartCoroutine(slowedFalse());
+        }
 
-        //else
-        //{
-        //    rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
-        //    rb.linearVelocity = rb.linearVelocity.normalized * 30f;
-        //}
+        else if (stunned)
+        {
+            
+            StartCoroutine(stunnedFalse());
+        }
+
+        else
+        {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+            rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+        }
     }
 
-    //IEnumerator slowedFalse()
-    //{
-    //    yield return new WaitForSeconds(3f);
-    //    slowed = false;
-    //}
+    IEnumerator slowedFalse()
+    {
+        yield return new WaitForSeconds(3f);
+        slowed = false;
+    }
 
     IEnumerator stunnedFalse()
     {

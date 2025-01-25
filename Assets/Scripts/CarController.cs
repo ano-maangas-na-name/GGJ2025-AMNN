@@ -73,8 +73,7 @@ public class CarController : MonoBehaviour
 
         else if (stunned)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * 0;
-            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 0f);
+            
             StartCoroutine(stunnedFalse());
         }
 
