@@ -17,7 +17,9 @@ public class MapRandomizer : MonoBehaviour
     RectTransform rt;
     float rot;
 
-    
+    int mapChange;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,17 +51,22 @@ public class MapRandomizer : MonoBehaviour
         rot = transform.eulerAngles.z;
         Debug.Log(rot);
 
-        if (rot > 300 && rot < 60)
+        if ((rot > 300 && rot < 360) || (rot > 0 && rot < 60))
         {
+            mapChange = 1;
             StartCoroutine(ChangeScene());
         }
         else if (rot > 60 && rot < 180)
         {
+            mapChange = 2;
+
             StartCoroutine(ChangeScene());
 
         }
         else if (rot > 180 && rot < 300)
         {
+            mapChange = 3;
+
             StartCoroutine(ChangeScene());
         }
 
@@ -78,44 +85,44 @@ public class MapRandomizer : MonoBehaviour
 
             rotated = true;
             spinButton.SetActive(false);
-    }
+        }
     }
 
     IEnumerator ChangeScene()
     {
-    // Identify the first map in the array
-    GameObject selectedMap = maps[0]; // Assuming "first map" refers to the first item in the maps array
+        // Identify the first map in the array
+        GameObject selectedMap = maps[0]; // Assuming "first map" refers to the first item in the maps array
 
-    // Ensure the map is visible and reset its initial properties
-    selectedMap.SetActive(true);
-    selectedMap.transform.localScale = Vector3.zero; // Start at scale 0
-    CanvasGroup canvasGroup = selectedMap.GetComponent<CanvasGroup>();
-    if (!canvasGroup)
-    {
-        canvasGroup = selectedMap.AddComponent<CanvasGroup>(); // Add CanvasGroup if not already present
-    }
-    canvasGroup.alpha = 0; // Start fully transparent
+        // Ensure the map is visible and reset its initial properties
+        selectedMap.SetActive(true);
+        selectedMap.transform.localScale = Vector3.zero; // Start at scale 0
+        CanvasGroup canvasGroup = selectedMap.GetComponent<CanvasGroup>();
+        if (!canvasGroup)
+        {
+            canvasGroup = selectedMap.AddComponent<CanvasGroup>(); // Add CanvasGroup if not already present
+        }
+        canvasGroup.alpha = 0; // Start fully transparent
 
-    // Animate scale and fade-in over 1 second
-    selectedMap.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack); // Smooth scale-in
-    canvasGroup.DOFade(1, 1f); // Fade in
+        // Animate scale and fade-in over 1 second
+        selectedMap.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack); // Smooth scale-in
+        canvasGroup.DOFade(1, 1f); // Fade in
 
-    // Wait for 3 seconds (1 second for animation, 2 seconds to hold)
-    yield return new WaitForSeconds(5f);
+        // Wait for 3 seconds (1 second for animation, 2 seconds to hold)
+        yield return new WaitForSeconds(5f);
 
-    // Transition to the appropriate scene
-    Debug.Log("Change Scene");
-    if (rot > 300 && rot < 60)
-    {
-        SceneManager.LoadScene("SodaMap");
+        // Transition to the appropriate scene
+        Debug.Log("Change Scene");
+        if (mapChange == 1)
+        {
+            SceneManager.LoadScene("SodaMap");
+        }
+        else if (mapChange == 2)
+        {
+            SceneManager.LoadScene("GumMap");
+        }
+        else if (mapChange == 3)
+        {
+            SceneManager.LoadScene("SoapMap");
+        }
     }
-    else if (rot > 60 && rot < 180)
-    {
-        SceneManager.LoadScene("GumMap");
-    }
-    else if (rot > 180 && rot < 300)
-    {
-        SceneManager.LoadScene("SoapMap");
-    }
-}
 }
