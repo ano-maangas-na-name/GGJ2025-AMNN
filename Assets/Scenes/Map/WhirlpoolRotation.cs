@@ -8,6 +8,6 @@ public class Whirlpool : MonoBehaviour
     void Update()
     {
         // Rotate the object around its Z-axis in place
-        transform.Rotate(0, rotationspeed * Time.deltaTime, 0);
+        transform.Rotate(0, 0, rotationspeed * Time.deltaTime);
     }
 }
