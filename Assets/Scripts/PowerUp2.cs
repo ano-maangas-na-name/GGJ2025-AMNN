@@ -1,19 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
+public class PowerUp2 : MonoBehaviour
 {
-    CarController CarController;
+    Player3Controller Player3Controller;
 
     private void Start()
     {
-        CarController = GetComponent<CarController>();
+        Player3Controller = GetComponent<Player3Controller>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SpeedIncrease"))
         {
-            CarController.speedIncrease = true;
+            Player3Controller.speedIncrease = true;
             Debug.Log("Speed Boost true");
             StartCoroutine(PowerUpDelay());
         }
@@ -22,7 +22,7 @@ public class PowerUp : MonoBehaviour
     IEnumerator PowerUpDelay()
     {
         yield return new WaitForSeconds(2.5f);
-        CarController.speedIncrease = false;
+        Player3Controller.speedIncrease = false;
         Debug.Log("Speed Boost False");
     }
 }
