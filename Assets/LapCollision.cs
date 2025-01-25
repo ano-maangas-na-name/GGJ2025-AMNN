@@ -5,6 +5,7 @@ public class LapCollision : MonoBehaviour
     [SerializeField] private PlayerLapScore playerLap;
     public bool player1Verify;
     public bool player2Verify;
+    public bool player3Verify;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,14 +23,32 @@ public class LapCollision : MonoBehaviour
     {
         if (other.CompareTag("Player 1") && player1Verify)
         {
-            playerLap.player1Lap++;
-            player1Verify = false;
+            if (playerLap.player1Lap < 3)
+            {
+                playerLap.player1Lap++;
+                player1Verify = false;
+            }
+
         }
 
         else if (other.CompareTag("Player 2") && player2Verify)
         {
-            playerLap.player2Lap++;
-            player2Verify = false;
+            if (playerLap.player2Lap < 3)
+            {
+                playerLap.player2Lap++;
+                player2Verify = false;
+            }
+
+        }
+
+        else if (other.CompareTag("Player 3") && player3Verify)
+        {
+            if (playerLap.player3Lap < 3)
+            {
+                playerLap.player3Lap++;
+                player3Verify = false;
+            }
+
         }
     }
 
