@@ -8,9 +8,13 @@ TagManager:
   - 1
   - 2
   - 3
+<<<<<<< HEAD
+  - SpeedIncrease
+=======
   - gum
   - soap
   - soda
+>>>>>>> 36474b2e2a1be62ec44870f3ddcec0627f1b5459
   layers:
   - Default
   - TransparentFX
