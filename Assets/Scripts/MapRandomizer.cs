@@ -89,40 +89,41 @@ public class MapRandomizer : MonoBehaviour
     }
 
     IEnumerator ChangeScene()
+{
+    // Ensure mapChange corresponds to the correct index in the maps array
+    GameObject selectedMap = maps[mapChange - 1]; // Arrays are zero-indexed, so subtract 1 from mapChange
+
+    // Ensure the map is visible and reset its initial properties
+    selectedMap.SetActive(true);
+    selectedMap.transform.localScale = Vector3.zero; // Start at scale 0
+    CanvasGroup canvasGroup = selectedMap.GetComponent<CanvasGroup>();
+    if (!canvasGroup)
     {
-        // Identify the first map in the array
-        GameObject selectedMap = maps[0]; // Assuming "first map" refers to the first item in the maps array
-
-        // Ensure the map is visible and reset its initial properties
-        selectedMap.SetActive(true);
-        selectedMap.transform.localScale = Vector3.zero; // Start at scale 0
-        CanvasGroup canvasGroup = selectedMap.GetComponent<CanvasGroup>();
-        if (!canvasGroup)
-        {
-            canvasGroup = selectedMap.AddComponent<CanvasGroup>(); // Add CanvasGroup if not already present
-        }
-        canvasGroup.alpha = 0; // Start fully transparent
-
-        // Animate scale and fade-in over 1 second
-        selectedMap.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack); // Smooth scale-in
-        canvasGroup.DOFade(1, 1f); // Fade in
-
-        // Wait for 3 seconds (1 second for animation, 2 seconds to hold)
-        yield return new WaitForSeconds(5f);
-
-        // Transition to the appropriate scene
-        Debug.Log("Change Scene");
-        if (mapChange == 1)
-        {
-            SceneManager.LoadScene("SodaMap");
-        }
-        else if (mapChange == 2)
-        {
-            SceneManager.LoadScene("GumMap");
-        }
-        else if (mapChange == 3)
-        {
-            SceneManager.LoadScene("SoapMap");
-        }
+        canvasGroup = selectedMap.AddComponent<CanvasGroup>(); // Add CanvasGroup if not already present
     }
+    canvasGroup.alpha = 0; // Start fully transparent
+
+    // Animate scale and fade-in over 1 second
+    selectedMap.transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack); // Smooth scale-in
+    canvasGroup.DOFade(1, 1f); // Fade in
+
+    // Wait for 5 seconds (1 second for animation, 4 seconds to hold)
+    yield return new WaitForSeconds(5f);
+
+    // Transition to the appropriate scene
+    Debug.Log("Change Scene");
+    if (mapChange == 1)
+    {
+        SceneManager.LoadScene("SodaMap");
+    }
+    else if (mapChange == 2)
+    {
+        SceneManager.LoadScene("GumMap");
+    }
+    else if (mapChange == 3)
+    {
+        SceneManager.LoadScene("SoapMap");
+    }
+}
+
 }
