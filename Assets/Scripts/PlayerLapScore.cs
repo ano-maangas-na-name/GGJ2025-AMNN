@@ -1,0 +1,70 @@
+using UnityEngine;
+
+public class PlayerLapScore : MonoBehaviour
+{
+    public int player1Lap = 1;
+    public int player2Lap = 1;
+
+    public string winner = "";
+
+    public GameObject player1Lap1, player1Lap2, player1Lap3, player2Lap1, player2Lap2, player2Lap3;
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (player1Lap == 1)
+        {
+            player1Lap1.SetActive(true);
+            player1Lap2.SetActive(false);
+            player1Lap3.SetActive(false);
+        }
+        else if (player1Lap == 2)
+        {
+            player1Lap1.SetActive(false);
+            player1Lap2.SetActive(true);
+            player1Lap3.SetActive(false);
+        }
+        else if (player1Lap == 3)
+        {
+            player1Lap1.SetActive(false);
+            player1Lap2.SetActive(false);
+            player1Lap3.SetActive(true);
+        }
+
+        if (player2Lap == 1)
+        {
+            player2Lap1.SetActive(true);
+            player2Lap2.SetActive(false);
+            player2Lap3.SetActive(false);
+        }
+        else if (player2Lap == 2)
+        {
+            player2Lap1.SetActive(false);
+            player2Lap2.SetActive(true);
+            player2Lap3.SetActive(false);
+        }
+        else if (player2Lap == 3)
+        {
+            player2Lap1.SetActive(false);
+            player2Lap2.SetActive(false);
+            player2Lap3.SetActive(true);
+        }
+
+        if (player1Lap > 3 && player2Lap <= 3)
+        {
+            winner = "Player 1";
+        }
+        else if (player2Lap > 3 && player1Lap <= 3)
+        {
+            winner = "Player 2";
+        }
+
+    }
+}
+
+
+
