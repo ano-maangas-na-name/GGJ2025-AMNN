@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CarController : MonoBehaviour
+public class Player2Controller : MonoBehaviour
 {
     private float horizontalInput, verticalInput;
     private float currentSteerAngle, currentbreakForce;
@@ -14,8 +12,7 @@ public class CarController : MonoBehaviour
 
     PlayerInput playerInput;
     InputAction moveAction;
-
-    Vector2 direction;
+    private Vector2 direction;
 
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
@@ -36,7 +33,8 @@ public class CarController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0f, -1f, 0f);
-        moveAction = playerInput.actions.FindAction("Move");
+        moveAction = playerInput.actions.FindAction("Move 2");
+
     }
 
     private void FixedUpdate()
@@ -52,6 +50,18 @@ public class CarController : MonoBehaviour
     private void GetInput()
     {
         direction = moveAction.ReadValue<Vector2>();
+        Debug.Log(direction);
+
+
+
+
+        // // Steering Input
+        // horizontalInput = Input.GetAxis("Horizontal");
+
+        // // Acceleration Input
+        // verticalInput = Input.GetAxis("Vertical");
+
+        // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
     }
 
