@@ -60,20 +60,20 @@ public class PlayerLapScore : MonoBehaviour
         if (player3Lap == 1)
         {
             player3Lap1.SetActive(true);
-            player3Lap1.SetActive(false);
-            player3Lap1.SetActive(false);
+            player3Lap2.SetActive(false);
+            player3Lap3.SetActive(false);
         }
         else if (player3Lap == 2)
         {
             player3Lap1.SetActive(false);
-            player3Lap1.SetActive(true);
-            player3Lap1.SetActive(false);
+            player3Lap2.SetActive(true);
+            player3Lap3.SetActive(false);
         }
         else if (player3Lap == 3)
         {
             player3Lap1.SetActive(false);
-            player3Lap1.SetActive(false);
-            player3Lap1.SetActive(true);
+            player3Lap2.SetActive(false);
+            player3Lap3.SetActive(true);
         }
 
         if (player1Lap > 3 && player2Lap <= 3 && player3Lap <= 3)

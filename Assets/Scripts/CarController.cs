@@ -10,6 +10,8 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
+    [SerializeField] GameObject stun;
+
     private Rigidbody rb;
 
     PlayerInput playerInput;
@@ -71,16 +73,22 @@ public class CarController : MonoBehaviour
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
         }
 
-        else if (stunned)
-        {
-            
-            StartCoroutine(stunnedFalse());
-        }
+  
 
         else
         {
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+        }
+
+        if (stunned)
+        {
+            stun.SetActive(true);
+            StartCoroutine(stunnedFalse());
+        }
+        else
+        {
+            stun.SetActive(false);
         }
     }
 
