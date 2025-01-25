@@ -12,6 +12,8 @@ public class RaceCountdown : MonoBehaviour
     public float holdDuration = 0.5f; // Duration to hold the sprite before fading out
     public float initialDelay = 2f;  // Delay before starting the countdown
 
+    RaceManagerScript rms;
+
     public void Start()
     {
         StartCountDown();
@@ -39,6 +41,7 @@ public class RaceCountdown : MonoBehaviour
             yield return ShowCountDownSprite(i - 1); // Show the sprite with animation
         }
 
+        rms.gameState = RaceManagerScript.GameState.MidGame;
         Debug.Log("Countdown Finished");
 
         // Hide all sprites after countdown
