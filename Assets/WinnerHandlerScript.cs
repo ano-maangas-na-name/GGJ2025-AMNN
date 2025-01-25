@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinnerHandlerScript : MonoBehaviour
 {
@@ -19,6 +21,15 @@ public class WinnerHandlerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (winner != Winner.None)
+        {
+            StartCoroutine(WinnerScreenTransition());
 
+        }
+    }
+    IEnumerator WinnerScreenTransition()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("WinnerScreen");
     }
 }

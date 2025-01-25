@@ -6392,6 +6392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76d643819e9e124f90927e787c6de38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whs: {fileID: 400533308}
   player1Lap: 1
   player2Lap: 1
   player3Lap: 1
