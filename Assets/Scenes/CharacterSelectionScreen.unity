@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 366149101}
   m_Layer: 0
   m_Name: character 2
-  m_TagString: Untagged
+  m_TagString: soap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 1612716483}
   m_Layer: 0
   m_Name: character 3
-  m_TagString: Untagged
+  m_TagString: soda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1808,7 +1808,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612716482}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1612716487
 Transform:
   m_ObjectHideFlags: 0
@@ -1919,6 +1919,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 642358484}
+        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
+        m_MethodName: OnNextButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1864881038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1972,7 +1984,7 @@ GameObject:
   - component: {fileID: 1884157954}
   m_Layer: 0
   m_Name: character 1
-  m_TagString: Untagged
+  m_TagString: gum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2066,7 +2078,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884157953}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1884157958
 Transform:
   m_ObjectHideFlags: 0

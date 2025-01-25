@@ -8,6 +8,9 @@ TagManager:
   - 1
   - 2
   - 3
+  - gum
+  - soap
+  - soda
   layers:
   - Default
   - TransparentFX
