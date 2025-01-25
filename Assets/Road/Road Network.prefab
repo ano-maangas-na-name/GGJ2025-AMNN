@@ -23628,7 +23628,7 @@ MonoBehaviour:
   selectedRoadRightInnerOffset: 0
   selectedCrossingMaterial: 0
   crossingTextureInfoIndex: 0
-  handleSelection: 1
+  handleSelection: 2
   positionHandleSelection: 1
   markerDirXZ: 1
   markerDirXZInt: 2
@@ -23690,11 +23690,12 @@ MonoBehaviour:
   mirrorCrossings: 1
   terrainNames:
   - All Terrains
-  - Soda
+  - SoapMap
   terrainObjects:
   - {fileID: 0}
   - {fileID: 0}
-  terrainSplatTextures: []
+  terrainSplatTextures:
+  - Splat 1 - NewLayer
   activeTerrain: {fileID: 0}
   activeTerrainY: 0
   selectedTerrain: 0
@@ -24049,7 +24050,7 @@ MonoBehaviour:
   endCapColor: {r: 0.35, g: 0.5, b: 0.9, a: 1}
   soSectionMaterial: {fileID: 0}
   v32b4Flag: 1
-  ctrlKey: 1
+  ctrlKey: 0
   soSectionInstance: {fileID: 0}
   ignoreFlexConnectorUpdate: 0
   surfaceChangeFlag: 0
