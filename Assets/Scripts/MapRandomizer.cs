@@ -107,15 +107,15 @@ public class MapRandomizer : MonoBehaviour
     Debug.Log("Change Scene");
     if (rot > 300 && rot < 60)
     {
-        SceneManager.LoadScene("Soda Map");
+        SceneManager.LoadScene("SodaMap");
     }
     else if (rot > 60 && rot < 180)
     {
-        SceneManager.LoadScene("Gum Map");
+        SceneManager.LoadScene("GumMap");
     }
     else if (rot > 180 && rot < 300)
     {
-        SceneManager.LoadScene("Soap Map");
+        SceneManager.LoadScene("SoapMap");
     }
 }
 }
