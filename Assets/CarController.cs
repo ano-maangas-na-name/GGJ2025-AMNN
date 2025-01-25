@@ -36,7 +36,7 @@ public class CarController : MonoBehaviour
         GetInput();
         HandleMotor();
         HandleSteering();
-        UpdateWheels();
+        //UpdateWheels();
         Debug.Log("Current Speed: " + rb.linearVelocity.x);
         RigidbodyFreezeCheck();
     }
