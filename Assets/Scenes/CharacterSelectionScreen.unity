@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 366149101}
   m_Layer: 0
   m_Name: character 2
-  m_TagString: soap
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1380,7 +1380,7 @@ GameObject:
   - component: {fileID: 1612716483}
   m_Layer: 0
   m_Name: character 3
-  m_TagString: soda
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 1884157954}
   m_Layer: 0
   m_Name: character 1
-  m_TagString: gum
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
