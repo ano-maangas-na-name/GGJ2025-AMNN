@@ -8,7 +8,7 @@ public class PlayerLapScore : MonoBehaviour
 
     public string winner = "";
 
-    public GameObject player1Lap1, player1Lap2, player1Lap3, player2Lap1, player2Lap2, player2Lap3, player3Lap1, player3Lap2, player3Lap3;
+    public GameObject player1Lap1, player1Lap2, player1Lap3, player2Lap1, player2Lap2, player2Lap3, player3Lap1, player3Lap2, player3Lap3, bubble;
     void Start()
     {
 
@@ -77,18 +77,25 @@ public class PlayerLapScore : MonoBehaviour
         if (player1Lap > 3 && player2Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 1";
+            BubblePop();
         }
         else if (player2Lap > 3 && player1Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 2";
+            BubblePop();
+
         }
         else if (player3Lap > 3 && player1Lap <= 3 && player2Lap <= 3)
         {
             winner = "Player 3";
+            BubblePop();
+
         }
+    }
 
-
-
+    private void BubblePop()
+    {
+        bubble.SetActive(false);
     }
 }
 
