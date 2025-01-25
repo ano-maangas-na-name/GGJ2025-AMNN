@@ -4,10 +4,11 @@ public class PlayerLapScore : MonoBehaviour
 {
     public int player1Lap = 1;
     public int player2Lap = 1;
+    public int player3Lap = 1;
 
     public string winner = "";
 
-    public GameObject player1Lap1, player1Lap2, player1Lap3, player2Lap1, player2Lap2, player2Lap3;
+    public GameObject player1Lap1, player1Lap2, player1Lap3, player2Lap1, player2Lap2, player2Lap3, player3Lap1, player3Lap2, player3Lap3;
     void Start()
     {
 
@@ -54,14 +55,39 @@ public class PlayerLapScore : MonoBehaviour
             player2Lap3.SetActive(true);
         }
 
-        if (player1Lap > 3 && player2Lap <= 3)
+        if (player3Lap == 1)
+        {
+            player3Lap1.SetActive(true);
+            player3Lap1.SetActive(false);
+            player3Lap1.SetActive(false);
+        }
+        else if (player3Lap == 2)
+        {
+            player3Lap1.SetActive(false);
+            player3Lap1.SetActive(true);
+            player3Lap1.SetActive(false);
+        }
+        else if (player3Lap == 3)
+        {
+            player3Lap1.SetActive(false);
+            player3Lap1.SetActive(false);
+            player3Lap1.SetActive(true);
+        }
+
+        if (player1Lap > 3 && player2Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 1";
         }
-        else if (player2Lap > 3 && player1Lap <= 3)
+        else if (player2Lap > 3 && player1Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 2";
         }
+        else if (player3Lap > 3 && player1Lap <= 3 && player2Lap <= 3)
+        {
+            winner = "Player 3";
+        }
+
+
 
     }
 }

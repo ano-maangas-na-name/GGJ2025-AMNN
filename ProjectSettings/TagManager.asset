@@ -7,6 +7,14 @@ TagManager:
   - SpeedIncrease
   - Player 1
   - Player 2
+  - gum
+  - soda
+  - soap
+  - lap
+  - 2
+  - 1
+  - 3
+  - Player 3
   layers:
   - Default
   - TransparentFX
