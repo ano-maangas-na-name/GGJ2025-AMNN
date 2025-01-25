@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerLapScore : MonoBehaviour
 {
-    WinnerHandlerScript whs;
+    [SerializeField] WinnerHandlerScript whs;
     public int player1Lap = 1;
     public int player2Lap = 1;
     public int player3Lap = 1;
@@ -99,14 +99,8 @@ public class PlayerLapScore : MonoBehaviour
     private void BubblePop()
     {
         bubble.SetActive(false);
-        StartCoroutine(WinnerTransition());
     }
 
-    IEnumerator WinnerTransition()
-    {
-        yield return new WaitForSeconds(2f);
-
-    }
 
 
 }
