@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class CarController : MonoBehaviour
     private bool isBreaking;
 
     private Rigidbody rb;
+
+    PlayerInput playerInput;
+    InputAction moveAction;
+
+    Vector2 direction;
 
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
@@ -27,8 +33,10 @@ public class CarController : MonoBehaviour
 
     private void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0f, -1f, 0f);
+        moveAction = playerInput.actions.FindAction("Move");
     }
 
     private void FixedUpdate()
@@ -43,20 +51,14 @@ public class CarController : MonoBehaviour
 
     private void GetInput()
     {
-        // Steering Input
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        // Acceleration Input
-        verticalInput = Input.GetAxis("Vertical");
-
-        // Breaking Input
+        direction = moveAction.ReadValue<Vector2>();
         isBreaking = Input.GetKey(KeyCode.Space);
     }
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce * 2;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce * 2;
+        frontLeftWheelCollider.motorTorque = direction.y * motorForce * 2;
+        frontRightWheelCollider.motorTorque = direction.y * motorForce * 2;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
         rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
@@ -72,7 +74,7 @@ public class CarController : MonoBehaviour
 
     private void HandleSteering()
     {
-        currentSteerAngle = maxSteerAngle * horizontalInput;
+        currentSteerAngle = maxSteerAngle * direction.x;
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
