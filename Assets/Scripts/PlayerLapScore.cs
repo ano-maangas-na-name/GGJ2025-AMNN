@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerLapScore : MonoBehaviour
 {
+    WinnerHandlerScript whs;
     public int player1Lap = 1;
     public int player2Lap = 1;
     public int player3Lap = 1;
@@ -77,26 +79,36 @@ public class PlayerLapScore : MonoBehaviour
         if (player1Lap > 3 && player2Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 1";
+            whs.winner = WinnerHandlerScript.Winner.Player_1;
             BubblePop();
         }
         else if (player2Lap > 3 && player1Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 2";
+            whs.winner = WinnerHandlerScript.Winner.Player_2;
             BubblePop();
-
         }
         else if (player3Lap > 3 && player1Lap <= 3 && player2Lap <= 3)
         {
             winner = "Player 3";
+            whs.winner = WinnerHandlerScript.Winner.Player_3;
             BubblePop();
-
         }
     }
 
     private void BubblePop()
     {
         bubble.SetActive(false);
+        StartCoroutine(WinnerTransition());
     }
+
+    IEnumerator WinnerTransition()
+    {
+        yield return new WaitForSeconds(2f);
+
+    }
+
+
 }
 
 
