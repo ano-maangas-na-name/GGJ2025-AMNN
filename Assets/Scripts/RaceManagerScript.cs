@@ -7,7 +7,7 @@ public class RaceManagerScript : MonoBehaviour
 {
     public GameState gameState;
 
-    public GameObject lapCounter1, lapCounter2, lapCounter3;
+    public GameObject lapCounter1, lapCounter2, lapCounter3, finish;
     public LapScript lapScript;
     public enum GameState
     {
@@ -41,6 +41,13 @@ public class RaceManagerScript : MonoBehaviour
             lapCounter1.SetActive(false);
             lapCounter2.SetActive(false);
             lapCounter3.SetActive(true);
+        }
+        else if (lapScript.lapCounter > 3)
+        {
+            lapCounter1.SetActive(false);
+            lapCounter2.SetActive(false);
+            lapCounter3.SetActive(false);
+            finish.SetActive(true);
         }
     }
 
