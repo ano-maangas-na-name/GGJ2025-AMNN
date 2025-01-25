@@ -28,6 +28,7 @@ public class CarController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = new Vector3(0f, -1f, 0f);
     }
 
     private void FixedUpdate()
@@ -35,7 +36,8 @@ public class CarController : MonoBehaviour
         GetInput();
         HandleMotor();
         HandleSteering();
-        UpdateWheels();
+        //UpdateWheels();
+        Debug.Log("Current Speed: " + rb.linearVelocity.x);
         RigidbodyFreezeCheck();
     }
 
@@ -53,10 +55,11 @@ public class CarController : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
+        frontLeftWheelCollider.motorTorque = verticalInput * motorForce * 2;
+        frontRightWheelCollider.motorTorque = verticalInput * motorForce * 2;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
+        rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
     }
 
     private void ApplyBreaking()
@@ -93,13 +96,17 @@ public class CarController : MonoBehaviour
 
     private void RigidbodyFreezeCheck()
     {
-        if (rms.gameState == RaceManagerScript.GameState.PreGame)
+        if (rms != null)
         {
-            rb.isKinematic = true;
+            if (rms.gameState == RaceManagerScript.GameState.PreGame)
+            {
+                rb.isKinematic = true;
+            }
+            else
+            {
+                rb.isKinematic = false;
+            }
         }
-        else
-        {
-            rb.isKinematic = false;
-        }
+
     }
 }
