@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MapRandomSelection.unity
     guid: be7a82ebd50f37f44a53ee05b8130b3f
   - enabled: 1
-    path: Assets/Scenes/Countdown.unity
+    path: Assets/Scenes/SoapMap.unity
     guid: 08bd3e13d1bcb06439d92d4d9e7eb20a
   - enabled: 1
     path: Assets/Scenes/SodaMap.unity

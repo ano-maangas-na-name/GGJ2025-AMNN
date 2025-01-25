@@ -10,11 +10,25 @@ public class RaceCountdown : MonoBehaviour
     public float fadeDuration = 0.5f; // Duration for fade-in/out animation
     public float scaleDuration = 0.5f; // Duration for scale animation
     public float holdDuration = 0.5f; // Duration to hold the sprite before fading out
+    public float initialDelay = 2f;  // Delay before starting the countdown
+
+    public void Start()
+    {
+        StartCountDown();
+    }
 
     public void StartCountDown()
     {
-        countDownCount = countDownStartNumber; // Initialize countdown number
+        StartCoroutine(InitialDelayCoroutine());
+    }
 
+    private IEnumerator InitialDelayCoroutine()
+    {
+        // Wait for the initial delay
+        yield return new WaitForSeconds(initialDelay);
+
+        // Initialize countdown number and start the countdown coroutine
+        countDownCount = countDownStartNumber;
         StartCoroutine(CountDownCoroutine());
     }
 
