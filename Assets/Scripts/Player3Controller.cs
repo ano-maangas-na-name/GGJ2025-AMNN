@@ -1,6 +1,9 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System;
+using System.Collections;
 
 public class Player3Controller : MonoBehaviour
 {
@@ -13,7 +16,7 @@ public class Player3Controller : MonoBehaviour
     PlayerInput playerInput;
     InputAction moveAction;
     private Vector2 direction;
-    public bool slow = false;
+    public bool slowed = false;
 
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
@@ -28,6 +31,9 @@ public class Player3Controller : MonoBehaviour
 
     //Scripts
     // [SerializeField] private RaceManagerScript rms;
+
+    //PowerUp
+    public bool speedIncrease = false;
 
     private void Start()
     {
@@ -72,7 +78,29 @@ public class Player3Controller : MonoBehaviour
         frontRightWheelCollider.motorTorque = direction.y * motorForce * 2;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
-        rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+
+        if (!speedIncrease && !slowed)
+        {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
+        }
+
+        else if (slowed) 
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * 1;
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 2f);
+            StartCoroutine(slowedFalse());
+        }
+
+        else
+        {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+            rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+        }
+    }
+    IEnumerator slowedFalse()
+    {
+        yield return new WaitForSeconds(3f);
+        slowed = false;
     }
 
     private void ApplyBreaking()

@@ -30,14 +30,15 @@ public class AbilityOrb : MonoBehaviour
         if (other.CompareTag("Player 1"))
         {
             Debug.Log("Soap Ability");
-            
-            
+            player2Controller.slowed = true;
+            player3Controller.slowed = true;
         }
 
         if (other.CompareTag("Player 3"))
         {
             Debug.Log("Bubblegum Ability");
-
+            carController.stunned = true;
+            player2Controller.stunned = true;
         }
 
         if (other.CompareTag("Player 2"))

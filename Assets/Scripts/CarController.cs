@@ -30,6 +30,7 @@ public class CarController : MonoBehaviour
 
     //PowerUp
     public bool speedIncrease = false;
+    public bool stunned = false;
 
     //Scripts
     // [SerializeField] private RaceManagerScript rms;
@@ -69,11 +70,25 @@ public class CarController : MonoBehaviour
         {
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
         }
+
+        else if (stunned)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * 0;
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 0f);
+            StartCoroutine(stunnedFalse());
+        }
+
         else
         {
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             rb.linearVelocity = rb.linearVelocity.normalized * 30f;
         }
+    }
+
+    IEnumerator stunnedFalse()
+    {
+        yield return new WaitForSeconds(2f);
+        stunned = false;
     }
 
     private void ApplyBreaking()
