@@ -92,7 +92,7 @@ public class CharacterSelection : MonoBehaviour
 
 
         // Load the next scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("NextScene"); // Replace with your scene name
+        // UnityEngine.SceneManagement.SceneManager.LoadScene("NextScene"); // Replace with your scene name
     }
 }
 
