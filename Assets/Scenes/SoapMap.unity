@@ -5222,6 +5222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c806ceba470f48a70c862bb413f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowed: 0
   motorForce: 1000
   breakForce: 800
   maxSteerAngle: 30
@@ -5233,6 +5234,7 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 1999042250}
   rearLeftWheelTransform: {fileID: 1901374382}
   rearRightWheelTransform: {fileID: 1694320024}
+  speedIncrease: 0
 --- !u!146 &184010997 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 8551533702397822400, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
@@ -10823,6 +10825,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1989714423631356026, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344271127148968298, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516873704517739114, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665091141983445698, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506636468124976617, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5570665684389205112, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
       propertyPath: m_Name
       value: Bubblegum Car
@@ -10830,6 +10852,10 @@ PrefabInstance:
     - target: {fileID: 5570665684389205112, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
       propertyPath: m_TagString
       value: Player 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087743298044710566, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392470306031265779, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -10881,6 +10907,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689508109335911633, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393721530103557559, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456402155068541005, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492873689151091573, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497511809611631119, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146832390269958492, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -11934,6 +11980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8accdfbd292494db9a43ae289c10f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowed: 0
+  stunned: 0
   motorForce: 1000
   breakForce: 800
   maxSteerAngle: 30
@@ -11945,6 +11993,7 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 5142224332277929212}
   rearLeftWheelTransform: {fileID: 8509842160897572533}
   rearRightWheelTransform: {fileID: 6450733179213249260}
+  speedIncrease: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
