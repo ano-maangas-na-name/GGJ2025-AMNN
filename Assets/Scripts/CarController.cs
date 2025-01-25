@@ -48,7 +48,7 @@ public class CarController : MonoBehaviour
         HandleMotor();
         HandleSteering();
         //UpdateWheels();
-        Debug.Log("Current Speed: " + rb.linearVelocity.x);
+        //Debug.Log("Current Speed: " + rb.linearVelocity.x);
         // RigidbodyFreezeCheck();
     }
 
@@ -67,7 +67,7 @@ public class CarController : MonoBehaviour
 
         if (!speedIncrease)
         {
-            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 20f);
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
         }
         else
         {
@@ -107,6 +107,8 @@ public class CarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+
+    public void TITe() { }
 
     // private void RigidbodyFreezeCheck()
     // {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6596158063529194696}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: SpeedIncrease
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
