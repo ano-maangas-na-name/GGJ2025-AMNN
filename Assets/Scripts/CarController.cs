@@ -28,6 +28,9 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+    //PowerUp
+    public bool speedIncrease = false;
+
     //Scripts
     // [SerializeField] private RaceManagerScript rms;
 
@@ -45,7 +48,7 @@ public class CarController : MonoBehaviour
         HandleMotor();
         HandleSteering();
         //UpdateWheels();
-        Debug.Log("Current Speed: " + rb.linearVelocity.x);
+        //Debug.Log("Current Speed: " + rb.linearVelocity.x);
         // RigidbodyFreezeCheck();
     }
 
@@ -61,7 +64,16 @@ public class CarController : MonoBehaviour
         frontRightWheelCollider.motorTorque = direction.y * motorForce * 2;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
-        rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+
+        if (!speedIncrease)
+        {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
+        }
+        else
+        {
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+            rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+        }
     }
 
     private void ApplyBreaking()
@@ -95,6 +107,8 @@ public class CarController : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
+
+    public void TITe() { }
 
     // private void RigidbodyFreezeCheck()
     // {

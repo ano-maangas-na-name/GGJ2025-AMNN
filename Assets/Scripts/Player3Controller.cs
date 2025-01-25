@@ -2,7 +2,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player2Controller : MonoBehaviour
+public class Player3Controller : MonoBehaviour
 {
     private float horizontalInput, verticalInput;
     private float currentSteerAngle, currentbreakForce;
@@ -33,7 +33,7 @@ public class Player2Controller : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0f, -1f, 0f);
-        moveAction = playerInput.actions.FindAction("Move 2");
+        moveAction = playerInput.actions.FindAction("Move 3");
 
     }
 
