@@ -6,8 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/StartScreen.unity
+    guid: 8e3b9af2c6ca22142bdc0dc8c5232dc3
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelectionScreen.unity
+    guid: b5596468f7ac99341b6ecc04a7c8f748
+  - enabled: 1
+    path: Assets/Scenes/MapRandomSelection.unity
+    guid: be7a82ebd50f37f44a53ee05b8130b3f
+  - enabled: 1
+    path: Assets/Scenes/SoapMap.unity
+    guid: 08bd3e13d1bcb06439d92d4d9e7eb20a
+  - enabled: 1
+    path: Assets/Scenes/SodaMap.unity
+    guid: 50147c97b778a344394b2adaa7d6b948
+  - enabled: 1
+    path: Assets/Scenes/GumMap.unity
+    guid: 56791ed0c1691574da8a4ab2d0d83382
+  - enabled: 1
+    path: Assets/Scenes/SoapMap.unity
+    guid: 7bb3f4e97a0c62448beaca0884b9632f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
