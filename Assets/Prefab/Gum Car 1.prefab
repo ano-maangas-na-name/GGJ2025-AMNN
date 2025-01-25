@@ -1001,7 +1001,7 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.5
     width: 1
     height: 0.5
   near clip plane: 0.3
@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 8210548562673016948}
   - component: {fileID: 5352465156030061437}
   - component: {fileID: 1516902492987635602}
+  - component: {fileID: 7294514296725771293}
   m_Layer: 0
   m_Name: Gum Car 1
   m_TagString: Untagged
@@ -1185,6 +1186,36 @@ MonoBehaviour:
   rearLeftWheelTransform: {fileID: 6544143027208180194}
   rearRightWheelTransform: {fileID: 8210946115495799904}
   rms: {fileID: 0}
+--- !u!114 &7294514296725771293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5443060297454394773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &5881530064606677888
 GameObject:
   m_ObjectHideFlags: 0

@@ -1694,8 +1694,8 @@ GameObject:
   - component: {fileID: 5494143789484808684}
   - component: {fileID: 339507578144394937}
   - component: {fileID: 4982973942510424919}
-  - component: {fileID: 7871685904625840071}
   - component: {fileID: 3302710349898153302}
+  - component: {fileID: 9216055995850527565}
   m_Layer: 0
   m_Name: Player 2 Car
   m_TagString: Untagged
@@ -1769,30 +1769,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0479469, y: 1.7287705, z: 3.5027528}
   m_Center: {x: -0.023973465, y: 0.40274227, z: 0.05273986}
---- !u!114 &7871685904625840071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9044804198261602368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c1e494a0bb81684d955db22b28e184a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motorForce: 1000
-  breakForce: 800
-  maxSteerAngle: 30
-  frontLeftWheelCollider: {fileID: 2921513954568509024}
-  frontRightWheelCollider: {fileID: 7039368035786128186}
-  rearLeftWheelCollider: {fileID: 1380546248731093719}
-  rearRightWheelCollider: {fileID: 2315123270206117347}
-  frontLeftWheelTransform: {fileID: 7061367889176438725}
-  frontRightWheelTransform: {fileID: 5142224332278063698}
-  rearLeftWheelTransform: {fileID: 8509842160897951771}
-  rearRightWheelTransform: {fileID: 6450733179213106242}
-  rms: {fileID: 0}
 --- !u!114 &3302710349898153302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,6 +1799,30 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &9216055995850527565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044804198261602368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8accdfbd292494db9a43ae289c10f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorForce: 1000
+  breakForce: 800
+  maxSteerAngle: 30
+  frontLeftWheelCollider: {fileID: 2921513954568509024}
+  frontRightWheelCollider: {fileID: 7039368035786128186}
+  rearLeftWheelCollider: {fileID: 1380546248731093719}
+  rearRightWheelCollider: {fileID: 2315123270206117347}
+  frontLeftWheelTransform: {fileID: 7061367889176438725}
+  frontRightWheelTransform: {fileID: 5142224332278063698}
+  rearLeftWheelTransform: {fileID: 8509842160897951771}
+  rearRightWheelTransform: {fileID: 6450733179213106242}
+  rms: {fileID: 0}
 --- !u!1 &9176536779583732847
 GameObject:
   m_ObjectHideFlags: 0
