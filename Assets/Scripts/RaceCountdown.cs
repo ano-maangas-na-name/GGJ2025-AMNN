@@ -12,7 +12,7 @@ public class RaceCountdown : MonoBehaviour
     public float holdDuration = 0.5f; // Duration to hold the sprite before fading out
     public float initialDelay = 2f;  // Delay before starting the countdown
 
-    [SerializeField] private RaceManagerScript rms;
+    // [SerializeField] private RaceManagerScript rms;
 
     public void Start()
     {
@@ -41,7 +41,7 @@ public class RaceCountdown : MonoBehaviour
             yield return ShowCountDownSprite(i - 1); // Show the sprite with animation
         }
 
-        rms.gameState = RaceManagerScript.GameState.MidGame;
+        // rms.gameState = RaceManagerScript.GameState.MidGame;
         Debug.Log("Countdown Finished");
 
         // Hide all sprites after countdown
@@ -51,38 +51,38 @@ public class RaceCountdown : MonoBehaviour
     }
 
     private IEnumerator ShowCountDownSprite(int index)
-{
-    HideAllSprites(); // Ensure all sprites are hidden before showing the new one
-
-    if (index >= 0 && index < countDownSprites.Length)
     {
-        GameObject sprite = countDownSprites[index];
-        sprite.SetActive(true);
+        HideAllSprites(); // Ensure all sprites are hidden before showing the new one
 
-        // Reset scale and fade
-        sprite.transform.localScale = Vector3.zero;
-        CanvasGroup canvasGroup = sprite.GetComponent<CanvasGroup>();
-        if (!canvasGroup)
+        if (index >= 0 && index < countDownSprites.Length)
         {
-            canvasGroup = sprite.AddComponent<CanvasGroup>(); // Add CanvasGroup if not already present
+            GameObject sprite = countDownSprites[index];
+            sprite.SetActive(true);
+
+            // Reset scale and fade
+            sprite.transform.localScale = Vector3.zero;
+            CanvasGroup canvasGroup = sprite.GetComponent<CanvasGroup>();
+            if (!canvasGroup)
+            {
+                canvasGroup = sprite.AddComponent<CanvasGroup>(); // Add CanvasGroup if not already present
+            }
+            canvasGroup.alpha = 0; // Start fully transparent
+
+            // Animate scale and fade-in
+            sprite.transform.DOScale(Vector3.one, scaleDuration).SetEase(Ease.OutBack);
+            canvasGroup.DOFade(1, fadeDuration);
+
+            // Wait for the hold duration
+            yield return new WaitForSeconds(scaleDuration + holdDuration);
+
+            // Animate fade-out and scale-down
+            sprite.transform.DOScale(Vector3.zero, scaleDuration).SetEase(Ease.InBack);
+            canvasGroup.DOFade(0, fadeDuration);
+
+            // Wait for fade-out to complete
+            yield return new WaitForSeconds(fadeDuration);
         }
-        canvasGroup.alpha = 0; // Start fully transparent
-
-        // Animate scale and fade-in
-        sprite.transform.DOScale(Vector3.one, scaleDuration).SetEase(Ease.OutBack);
-        canvasGroup.DOFade(1, fadeDuration);
-
-        // Wait for the hold duration
-        yield return new WaitForSeconds(scaleDuration + holdDuration);
-
-        // Animate fade-out and scale-down
-        sprite.transform.DOScale(Vector3.zero, scaleDuration).SetEase(Ease.InBack);
-        canvasGroup.DOFade(0, fadeDuration);
-
-        // Wait for fade-out to complete
-        yield return new WaitForSeconds(fadeDuration);
     }
-}
 
 
     private void HideAllSprites()

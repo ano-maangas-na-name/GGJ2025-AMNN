@@ -3094,8 +3094,8 @@
     "m_ObjectId": "5d2dafea8cde4dfeb7453d96c37a2917",
     "m_Title": "Bubble Color",
     "m_Position": {
-        "x": -689.0,
-        "y": 84.0
+        "x": -688.9999389648438,
+        "y": 83.99999237060547
     }
 }
 
@@ -4235,7 +4235,7 @@
     "m_ObjectId": "8dd3fbd232f14c7b8ce85f9ea9251ec2",
     "m_Title": "Reflection: Reflection follows",
     "m_Position": {
-        "x": -687.0,
+        "x": -686.9999389648438,
         "y": -294.0
     }
 }
@@ -4873,7 +4873,7 @@
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_RenderFace": 2,
+    "m_RenderFace": 0,
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
