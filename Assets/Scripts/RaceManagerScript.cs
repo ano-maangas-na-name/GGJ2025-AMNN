@@ -23,18 +23,7 @@ public class RaceManagerScript : MonoBehaviour
     void Update()
     {
 
-        RaceStart();
     }
-    private void RaceStart()
-    {
-        if (countDown > 0)
-        {
-            countDown -= 1 * Time.deltaTime;
-        }
-        else
-        {
-            gameState = GameState.MidGame;
-        }
-    }
+
 }
 

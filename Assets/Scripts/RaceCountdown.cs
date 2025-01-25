@@ -12,7 +12,7 @@ public class RaceCountdown : MonoBehaviour
     public float holdDuration = 0.5f; // Duration to hold the sprite before fading out
     public float initialDelay = 2f;  // Delay before starting the countdown
 
-    RaceManagerScript rms;
+    [SerializeField] private RaceManagerScript rms;
 
     public void Start()
     {

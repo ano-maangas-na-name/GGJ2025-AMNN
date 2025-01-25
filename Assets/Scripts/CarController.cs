@@ -96,17 +96,17 @@ public class CarController : MonoBehaviour
 
     private void RigidbodyFreezeCheck()
     {
-        // if (rms != null)
-        // {
-        //     if (rms.gameState == RaceManagerScript.GameState.PreGame)
-        //     {
-        //         rb.isKinematic = true;
-        //     }
-        //     else
-        //     {
-        //         rb.isKinematic = false;
-        //     }
-        // }
+        if (rms != null)
+        {
+            if (rms.gameState == RaceManagerScript.GameState.PreGame)
+            {
+                rb.isKinematic = true;
+            }
+            else
+            {
+                rb.isKinematic = false;
+            }
+        }
 
     }
 }
