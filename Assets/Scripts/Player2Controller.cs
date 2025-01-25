@@ -26,7 +26,7 @@ public class Player2Controller : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
     //Scripts
-    [SerializeField] private RaceManagerScript rms;
+    // [SerializeField] private RaceManagerScript rms;
 
     private void Start()
     {
@@ -108,17 +108,17 @@ public class Player2Controller : MonoBehaviour
 
     private void RigidbodyFreezeCheck()
     {
-        if (rms != null)
-        {
-            if (rms.gameState == RaceManagerScript.GameState.PreGame)
-            {
-                rb.isKinematic = true;
-            }
-            else
-            {
-                rb.isKinematic = false;
-            }
-        }
+        // if (rms != null)
+        // {
+        //     if (rms.gameState == RaceManagerScript.GameState.PreGame)
+        //     {
+        //         rb.isKinematic = true;
+        //     }
+        //     else
+        //     {
+        //         rb.isKinematic = false;
+        //     }
+        // }
 
     }
 }

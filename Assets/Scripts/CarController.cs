@@ -29,7 +29,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
     //Scripts
-    [SerializeField] private RaceManagerScript rms;
+    // [SerializeField] private RaceManagerScript rms;
 
     private void Start()
     {
@@ -46,7 +46,7 @@ public class CarController : MonoBehaviour
         HandleSteering();
         //UpdateWheels();
         Debug.Log("Current Speed: " + rb.linearVelocity.x);
-        RigidbodyFreezeCheck();
+        // RigidbodyFreezeCheck();
     }
 
     private void GetInput()
@@ -96,19 +96,19 @@ public class CarController : MonoBehaviour
         wheelTransform.position = pos;
     }
 
-    private void RigidbodyFreezeCheck()
-    {
-        if (rms != null)
-        {
-            if (rms.gameState == RaceManagerScript.GameState.PreGame)
-            {
-                rb.isKinematic = true;
-            }
-            else
-            {
-                rb.isKinematic = false;
-            }
-        }
+    // private void RigidbodyFreezeCheck()
+    // {
+    //     if (rms != null)
+    //     {
+    //         if (rms.gameState == RaceManagerScript.GameState.PreGame)
+    //         {
+    //             rb.isKinematic = true;
+    //         }
+    //         else
+    //         {
+    //             rb.isKinematic = false;
+    //         }
+    //     }
 
-    }
+    // }
 }
