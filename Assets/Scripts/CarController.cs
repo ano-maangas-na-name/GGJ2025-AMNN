@@ -73,8 +73,6 @@ public class CarController : MonoBehaviour
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
         }
 
-  
-
         else
         {
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);

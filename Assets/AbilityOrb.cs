@@ -22,7 +22,7 @@ public class AbilityOrb : MonoBehaviour
         carController = soap.GetComponent<CarController>();
         player2Controller = coke.GetComponent<Player2Controller>();
         player3Controller = bubblegum.GetComponent<Player3Controller>();
- 
+
 
     }
     private void OnTriggerEnter(Collider other)
@@ -44,6 +44,7 @@ public class AbilityOrb : MonoBehaviour
         if (other.CompareTag("Player 2"))
         {
             Debug.Log("Coke Ability");
+            carController.speedIncrease = true;
 
         }
     }
