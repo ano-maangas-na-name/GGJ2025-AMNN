@@ -114,6 +114,7 @@ public class MapRandomizer : MonoBehaviour
         Debug.Log("Change Scene");
         if (mapChange == 1)
         {
+            
             SceneManager.LoadScene("SoapMap");
         }
         else if (mapChange == 2)
