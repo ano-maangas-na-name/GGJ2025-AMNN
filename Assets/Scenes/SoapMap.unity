@@ -17110,8 +17110,8 @@ MonoBehaviour:
   player1Win: {fileID: 2060399635}
   player2Win: {fileID: 1498864721}
   player3Win: {fileID: 1840831569}
-  player1Splash: {fileID: 1489283608}
-  player2Splash: {fileID: 824218485}
+  player1Splash: {fileID: 824218485}
+  player2Splash: {fileID: 1489283608}
   player3Splash: {fileID: 342355090}
 --- !u!4 &1243987356
 Transform:
