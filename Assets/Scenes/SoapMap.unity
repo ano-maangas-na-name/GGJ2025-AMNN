@@ -13558,6 +13558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stun: {fileID: 1932164595}
+  sodaEffect: {fileID: 0}
   slowed: 0
   stunned: 0
   motorForce: 1000
