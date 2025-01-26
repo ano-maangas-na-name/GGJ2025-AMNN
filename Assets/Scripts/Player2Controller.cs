@@ -22,6 +22,7 @@ public class Player2Controller : MonoBehaviour
 
     public bool slowed = false;
     public bool stunned = false;
+    public bool ability = false;
 
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
@@ -77,13 +78,11 @@ public class Player2Controller : MonoBehaviour
         ApplyBreaking();
 
 
-
-
-        if (!speedIncrease && !slowed)
+        if (!speedIncrease && !slowed && !ability && !stunned)
         {
             slowEffect.SetActive(false);
-            sodaEffect.SetActive(false);
-            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+            Debug.Log("Ability False");
         }
 
         else if (slowed)
@@ -96,13 +95,20 @@ public class Player2Controller : MonoBehaviour
 
         else if (speedIncrease)
         {
-            sodaEffect.SetActive(true);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             rb.linearVelocity = rb.linearVelocity.normalized * 30f;
             StartCoroutine(speedFalse());
         }
 
-        if (stunned)
+        else if (ability) 
+        {
+            sodaEffect.SetActive(true);
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
+            rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+            StartCoroutine(abilityFalse());
+            Debug.Log("ability true");
+        }
+        else if (stunned)
         {
             stun.SetActive(true);
             StartCoroutine(stunnedFalse());
@@ -111,8 +117,6 @@ public class Player2Controller : MonoBehaviour
         {
             stun.SetActive(false);
         }
-
-
     }
 
     IEnumerator slowedFalse()
@@ -124,6 +128,12 @@ public class Player2Controller : MonoBehaviour
     IEnumerator speedFalse()
     {
         yield return new WaitForSeconds(3f);
+        speedIncrease = false;
+    }
+
+    IEnumerator abilityFalse()
+    {
+        yield return new WaitForSeconds(6f);
         speedIncrease = false;
     }
 
