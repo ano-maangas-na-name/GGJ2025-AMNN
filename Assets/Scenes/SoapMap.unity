@@ -5243,6 +5243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c806ceba470f48a70c862bb413f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowEffect: {fileID: 0}
   slowed: 0
   motorForce: 1000
   breakForce: 800
@@ -5266,6 +5267,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6689508109335911633, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
   m_PrefabInstance: {fileID: 5264324967797166607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &137292733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137292715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e452ca9309c93b7499868ccd6b0fe2e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &147743676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8736168441364977856, guid: 7f120b75692a5ec479e2c92e727587a0, type: 3}
@@ -17952,6 +17965,18 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 8210548562673016948, guid: bb7dbd880124210488baeb28ec23717b, type: 3}
   m_PrefabInstance: {fileID: 1766919837}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1387735617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387735595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634b63494ea179c4f866c5c3f92f514b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1398985628
 GameObject:
   m_ObjectHideFlags: 0
@@ -19391,6 +19416,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5443060297454394773, guid: bb7dbd880124210488baeb28ec23717b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1387735607}
+    - targetCorrespondingSourceObject: {fileID: 5443060297454394773, guid: bb7dbd880124210488baeb28ec23717b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1387735617}
   m_SourcePrefab: {fileID: 100100000, guid: bb7dbd880124210488baeb28ec23717b, type: 3}
 --- !u!1001 &1801107818
 PrefabInstance:
@@ -26842,6 +26870,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5570665684389205112, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 137292721}
+    - targetCorrespondingSourceObject: {fileID: 5570665684389205112, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 137292733}
   m_SourcePrefab: {fileID: 100100000, guid: f4123415876135143b2a0d1bfa061fef, type: 3}
 --- !u!4 &5494143789485207362
 Transform:
@@ -27831,6 +27862,7 @@ GameObject:
   - component: {fileID: 4982973942510298617}
   - component: {fileID: 3302710349897747448}
   - component: {fileID: 9216055995850139107}
+  - component: {fileID: 9216055995850139108}
   m_Layer: 0
   m_Name: Coke Car
   m_TagString: Player 2
@@ -27886,6 +27918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stun: {fileID: 1932164595}
   sodaEffect: {fileID: 890498980}
+  slowEffect: {fileID: 0}
   slowed: 0
   stunned: 0
   motorForce: 1000
@@ -27900,6 +27933,18 @@ MonoBehaviour:
   rearLeftWheelTransform: {fileID: 8509842160897572533}
   rearRightWheelTransform: {fileID: 6450733179213249260}
   speedIncrease: 0
+--- !u!114 &9216055995850139108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044804198261985006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec6d0714cfbe5348b3d7fab84db966c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
