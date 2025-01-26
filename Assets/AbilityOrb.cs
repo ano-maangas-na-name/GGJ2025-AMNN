@@ -1,5 +1,8 @@
 using System.Xml.Serialization;
 using UnityEngine;
+using System.Collections.Generic;
+using System;
+using System.Collections;
 
 public class AbilityOrb : MonoBehaviour
 {
@@ -45,6 +48,16 @@ public class AbilityOrb : MonoBehaviour
         {
             Debug.Log("Coke Ability");
             player2Controller.ability = true;
+            StartCoroutine(abilityFalse());
         }
+
+        IEnumerator abilityFalse()
+        {
+            yield return new WaitForSeconds(6f);
+            player2Controller.ability = false;
+            Debug.Log("Speed Boost False");
+        }
+
+
     }
 }
