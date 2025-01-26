@@ -78,9 +78,8 @@ public class Player2Controller : MonoBehaviour
         ApplyBreaking();
 
 
-        if (!speedIncrease && !slowed && !ability && !stunned)
+        if (!speedIncrease && !slowed && !ability)
         {
-            slowEffect.SetActive(false);
             sodaEffect.SetActive(false);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             Debug.Log("Ability False");
@@ -110,11 +109,13 @@ public class Player2Controller : MonoBehaviour
             StartCoroutine(abilityFalse());
             Debug.Log("ability true");
         }
-        else if (stunned)
+
+        if (stunned)
         {
             stun.SetActive(true);
             StartCoroutine(stunnedFalse());
         }
+
         else
         {
             stun.SetActive(false);
