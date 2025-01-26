@@ -44,7 +44,7 @@ public class AbilityOrb : MonoBehaviour
         if (other.CompareTag("Player 2"))
         {
             Debug.Log("Coke Ability");
-            carController.speedIncrease = true;
+            player2Controller.speedIncrease = true;
 
         }
     }
