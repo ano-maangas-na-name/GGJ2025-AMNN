@@ -11,7 +11,7 @@ public class Player2Controller : MonoBehaviour
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
-    [SerializeField] GameObject stun;
+    [SerializeField] GameObject stun, sodaEffect;
 
 
     private Rigidbody rb;
@@ -36,7 +36,7 @@ public class Player2Controller : MonoBehaviour
 
     //Scripts
     // [SerializeField] private RaceManagerScript rms;
-    
+
 
     //PowerUp
     public bool speedIncrease = false;
@@ -91,7 +91,7 @@ public class Player2Controller : MonoBehaviour
             StartCoroutine(slowedFalse());
         }
 
-  
+
 
         else
         {
@@ -107,6 +107,11 @@ public class Player2Controller : MonoBehaviour
         else
         {
             stun.SetActive(false);
+        }
+
+        if (speedIncrease)
+        {
+            sodaEffect.SetActive(true);
         }
     }
 
@@ -170,6 +175,6 @@ public class Player2Controller : MonoBehaviour
 
     }
 
-    
+
 
 }

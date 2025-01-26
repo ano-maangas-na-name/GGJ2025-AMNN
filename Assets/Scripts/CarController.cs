@@ -10,7 +10,7 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
-    [SerializeField] GameObject stun;
+    [SerializeField] GameObject stun, sodaEffect;
 
     private Rigidbody rb;
 
