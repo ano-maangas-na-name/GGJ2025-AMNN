@@ -5243,6 +5243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c806ceba470f48a70c862bb413f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowEffect: {fileID: 1027927928}
   slowed: 0
   motorForce: 1000
   breakForce: 800
@@ -19277,6 +19278,10 @@ PrefabInstance:
       propertyPath: stun
       value: 
       objectReference: {fileID: 1112676513}
+    - target: {fileID: 1516902492987635602, guid: bb7dbd880124210488baeb28ec23717b, type: 3}
+      propertyPath: sodaEffect
+      value: 
+      objectReference: {fileID: 890498980}
     - target: {fileID: 2144570147343544718, guid: bb7dbd880124210488baeb28ec23717b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -27886,6 +27891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stun: {fileID: 1932164595}
   sodaEffect: {fileID: 890498980}
+  slowEffect: {fileID: 1027927928}
   slowed: 0
   stunned: 0
   motorForce: 1000
