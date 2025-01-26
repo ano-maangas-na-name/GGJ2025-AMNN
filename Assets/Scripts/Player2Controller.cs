@@ -81,6 +81,7 @@ public class Player2Controller : MonoBehaviour
 
         if (!speedIncrease && !slowed)
         {
+            sodaEffect.SetActive(false);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
         }
 
@@ -91,12 +92,12 @@ public class Player2Controller : MonoBehaviour
             StartCoroutine(slowedFalse());
         }
 
-
-
-        else
+        else if (speedIncrease)
         {
+            sodaEffect.SetActive(true);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+            StartCoroutine(speedFalse());
         }
 
         if (stunned)
@@ -109,16 +110,19 @@ public class Player2Controller : MonoBehaviour
             stun.SetActive(false);
         }
 
-        if (speedIncrease)
-        {
-            sodaEffect.SetActive(true);
-        }
+
     }
 
     IEnumerator slowedFalse()
     {
         yield return new WaitForSeconds(3f);
         slowed = false;
+    }
+
+    IEnumerator speedFalse()
+    {
+        yield return new WaitForSeconds(3f);
+        speedIncrease = false;
     }
 
     IEnumerator stunnedFalse()
