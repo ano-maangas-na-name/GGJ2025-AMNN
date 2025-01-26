@@ -108,6 +108,7 @@ public class Player2Controller : MonoBehaviour
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             rb.linearVelocity = rb.linearVelocity.normalized * 30f;
             StartCoroutine(abilityFalse());
+            Debug.Log("ability true");
         }
         if (stunned)
         {
@@ -136,6 +137,7 @@ public class Player2Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(6f);
         speedIncrease = false;
+        Debug.Log("Ability False");
     }
 
     IEnumerator stunnedFalse()

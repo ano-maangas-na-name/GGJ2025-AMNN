@@ -45,7 +45,6 @@ public class AbilityOrb : MonoBehaviour
         {
             Debug.Log("Coke Ability");
             player2Controller.ability = true;
-
         }
     }
 }
