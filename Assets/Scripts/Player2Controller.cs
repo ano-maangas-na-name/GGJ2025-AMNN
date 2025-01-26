@@ -81,6 +81,7 @@ public class Player2Controller : MonoBehaviour
         if (!speedIncrease && !slowed && !ability && !stunned)
         {
             slowEffect.SetActive(false);
+            sodaEffect.SetActive(false);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             Debug.Log("Ability False");
         }
@@ -104,7 +105,7 @@ public class Player2Controller : MonoBehaviour
         {
             sodaEffect.SetActive(true);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
-            rb.linearVelocity = rb.linearVelocity.normalized * 30f;
+            rb.linearVelocity = rb.linearVelocity.normalized * 40f;
             StartCoroutine(abilityFalse());
             Debug.Log("ability true");
         }
