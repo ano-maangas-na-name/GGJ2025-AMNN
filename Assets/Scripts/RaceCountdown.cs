@@ -12,11 +12,16 @@ public class RaceCountdown : MonoBehaviour
     public float holdDuration = 0.5f; // Duration to hold the sprite before fading out
     public float initialDelay = 2f;  // Delay before starting the countdown
 
+    [SerializeField] Rigidbody player1, player2, player3;
+
     // [SerializeField] private RaceManagerScript rms;
 
     public void Start()
     {
         StartCountDown();
+        player1.isKinematic = true;
+        player2.isKinematic = true;
+        player3.isKinematic = true;
     }
 
     public void StartCountDown()
@@ -41,6 +46,20 @@ public class RaceCountdown : MonoBehaviour
             yield return ShowCountDownSprite(i - 1); // Show the sprite with animation
         }
 
+        if (player1 != null)
+        {
+            player1.isKinematic = false;
+
+        }
+        if (player2 != null)
+        {
+            player2.isKinematic = false;
+        }
+        if (player3 != null)
+        {
+            player3.isKinematic = false;
+
+        }
         // rms.gameState = RaceManagerScript.GameState.MidGame;
         Debug.Log("Countdown Finished");
 
