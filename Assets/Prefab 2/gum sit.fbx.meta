@@ -3,7 +3,77 @@ guid: d38395a47a9b7564a8d1a9d60a428454
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bubble
+    second: {fileID: 2100000, guid: 311cfe953384c4d43bb99d098781372b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collar
+    second: {fileID: 2100000, guid: 9d7bf736fd79b0b4293d0c8b6b8806a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cuff_R
+    second: {fileID: 2100000, guid: c42a50775c529434cad4f95598b39211, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder
+    second: {fileID: 2100000, guid: 55d03f80d1c7bb9408f6875f91d410fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_24
+    second: {fileID: 2100000, guid: 0d960861403e25b419ab630b18bc8494, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_456
+    second: {fileID: 2100000, guid: 0aa0fc4fd2d819f44b6605c7d0f48f1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_457
+    second: {fileID: 2100000, guid: c9ccd05db48544842a91f3fbd8eedcc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cylinder_583
+    second: {fileID: 2100000, guid: af83d042b682ac948ae622c9d3d2e92a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyeballs
+    second: {fileID: 2100000, guid: 8061d77a083a5c24380174918f1fe94e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyebrows
+    second: {fileID: 2100000, guid: 7379ebb476abb5b4c98578f338c43c66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyelids
+    second: {fileID: 2100000, guid: 36ca6b45eb290bb40a734c727405bcb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair_L
+    second: {fileID: 2100000, guid: 9c6d43dcb77c19c4a8ec5a0eb0fadedb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head
+    second: {fileID: 2100000, guid: 31fd898e7ac98a4469773ed4c9695f7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shorts
+    second: {fileID: 2100000, guid: 164237c86ae9bb0488f889910cfe7dea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
