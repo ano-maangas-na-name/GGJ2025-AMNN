@@ -11,6 +11,8 @@ public class PlayerLapScore : MonoBehaviour
     public string winner = "";
 
     public GameObject player1Lap1, player1Lap2, player1Lap3, player2Lap1, player2Lap2, player2Lap3, player3Lap1, player3Lap2, player3Lap3, bubble;
+
+    public GameObject player1Win, player2Win, player3Win;
     void Start()
     {
 
@@ -79,20 +81,41 @@ public class PlayerLapScore : MonoBehaviour
         if (player1Lap > 3 && player2Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 1";
-            whs.winner = WinnerHandlerScript.Winner.Player_1;
+            // whs.winner = WinnerHandlerScript.Winner.Player_1;
             BubblePop();
         }
         else if (player2Lap > 3 && player1Lap <= 3 && player3Lap <= 3)
         {
             winner = "Player 2";
-            whs.winner = WinnerHandlerScript.Winner.Player_2;
+            // whs.winner = WinnerHandlerScript.Winner.Player_2;
             BubblePop();
         }
         else if (player3Lap > 3 && player1Lap <= 3 && player2Lap <= 3)
         {
             winner = "Player 3";
-            whs.winner = WinnerHandlerScript.Winner.Player_3;
+            // whs.winner = WinnerHandlerScript.Winner.Player_3;
             BubblePop();
+        }
+
+
+
+        if (winner == "Player 1")
+        {
+            player1Win.SetActive(true);
+            player2Win.SetActive(false);
+            player3Win.SetActive(false);
+        }
+        else if (winner == "Player 2")
+        {
+            player2Win.SetActive(true);
+            player1Win.SetActive(false);
+            player3Win.SetActive(false);
+        }
+        else if (winner == "Player 3")
+        {
+            player3Win.SetActive(true);
+            player2Win.SetActive(false);
+            player1Win.SetActive(false);
         }
     }
 
