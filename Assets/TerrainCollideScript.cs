@@ -15,11 +15,5 @@ public class TerrainCollideScript : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collider other)
-    {
-        if (other.CompareTag("Player 1") || other.CompareTag("Player 2") || other.CompareTag("Player 3"))
-        {
-            Debug.Log("Collided");
-        }
-    }
+
 }

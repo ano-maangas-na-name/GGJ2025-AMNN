@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
@@ -101,7 +100,7 @@ public class Player2Controller : MonoBehaviour
             StartCoroutine(speedFalse());
         }
 
-        else if (ability) 
+        else if (ability)
         {
             sodaEffect.SetActive(true);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);

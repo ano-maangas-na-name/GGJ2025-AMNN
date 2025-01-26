@@ -27,5 +27,10 @@ public class VerifyCollision : MonoBehaviour
         {
             lapCollision.player2Verify = true;
         }
+
+        if (other.CompareTag("Player 3"))
+        {
+            lapCollision.player3Verify = true;
+        }
     }
 }
