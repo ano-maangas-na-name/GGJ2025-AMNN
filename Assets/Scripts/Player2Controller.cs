@@ -11,7 +11,7 @@ public class Player2Controller : MonoBehaviour
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
-    [SerializeField] GameObject stun, sodaEffect;
+    [SerializeField] GameObject stun, sodaEffect, slowEffect;
 
 
     private Rigidbody rb;
@@ -81,12 +81,14 @@ public class Player2Controller : MonoBehaviour
 
         if (!speedIncrease && !slowed)
         {
+            slowEffect.SetActive(false);
             sodaEffect.SetActive(false);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 25f);
         }
 
         else if (slowed)
         {
+            slowEffect.SetActive(true);
             rb.linearVelocity = rb.linearVelocity.normalized * 1;
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 2f);
             StartCoroutine(slowedFalse());
