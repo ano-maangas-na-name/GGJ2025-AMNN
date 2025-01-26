@@ -96,6 +96,7 @@ public class Player2Controller : MonoBehaviour
 
         else if (speedIncrease)
         {
+            sodaEffect.SetActive(true);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 30f);
             rb.linearVelocity = rb.linearVelocity.normalized * 30f;
             StartCoroutine(speedFalse());
