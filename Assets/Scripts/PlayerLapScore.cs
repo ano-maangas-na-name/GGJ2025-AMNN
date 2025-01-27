@@ -153,6 +153,6 @@ public class PlayerLapScore : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene("CharacterSelectionScreen");
     }
 }
