@@ -14,7 +14,7 @@ public class Player3Controller : MonoBehaviour
     [SerializeField] GameObject slowEffect;
     private Rigidbody rb;
 
-    PlayerInput playerInput;
+    // PlayerInput playerInput;
     InputAction moveAction;
     private Vector2 direction;
     public bool slowed = false;
@@ -38,10 +38,10 @@ public class Player3Controller : MonoBehaviour
 
     private void Start()
     {
-        playerInput = GetComponent<PlayerInput>();
+        // playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0f, -1f, 0f);
-        moveAction = playerInput.actions.FindAction("Move 3");
+        // moveAction = playerInput.actions.FindAction("Move 3");
 
     }
 
@@ -57,17 +57,17 @@ public class Player3Controller : MonoBehaviour
 
     private void GetInput()
     {
-        direction = moveAction.ReadValue<Vector2>();
+        // direction = moveAction.ReadValue<Vector2>();
         //Debug.Log(direction);
 
 
 
 
-        // // Steering Input
-        // horizontalInput = Input.GetAxis("Horizontal");
+        // Steering Input
+        horizontalInput = Input.GetAxis("Horizontal");
 
-        // // Acceleration Input
-        // verticalInput = Input.GetAxis("Vertical");
+        // Acceleration Input
+        verticalInput = Input.GetAxis("Vertical");
 
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
@@ -75,8 +75,8 @@ public class Player3Controller : MonoBehaviour
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = direction.y * motorForce * 2;
-        frontRightWheelCollider.motorTorque = direction.y * motorForce * 2;
+        frontLeftWheelCollider.motorTorque = verticalInput * motorForce * 2;
+        frontRightWheelCollider.motorTorque = verticalInput * motorForce * 2;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
 
@@ -117,7 +117,7 @@ public class Player3Controller : MonoBehaviour
 
     private void HandleSteering()
     {
-        currentSteerAngle = maxSteerAngle * direction.x;
+        currentSteerAngle = maxSteerAngle * horizontalInput;
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
