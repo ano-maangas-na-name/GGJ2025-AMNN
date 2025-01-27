@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class PlayerLapScore : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerLapScore : MonoBehaviour
 
     public GameObject player1Win, player2Win, player3Win;
     public GameObject player1Splash, player2Splash, player3Splash; // Splash screens for players
+
+    public GameObject playAgain;
 
     private bool player1SplashShown = false;
     private bool player2SplashShown = false;
@@ -70,19 +73,24 @@ public class PlayerLapScore : MonoBehaviour
             player1Win.SetActive(true);
             player2Win.SetActive(false);
             player3Win.SetActive(false);
+            playAgain.SetActive(true);
         }
         else if (winner == "Player 2")
         {
             player2Win.SetActive(true);
             player1Win.SetActive(false);
             player3Win.SetActive(false);
+            playAgain.SetActive(true);
         }
         else if (winner == "Player 3")
         {
             player3Win.SetActive(true);
             player2Win.SetActive(false);
             player1Win.SetActive(false);
+            playAgain.SetActive(true);
         }
+
+
     }
 
     private void ShowSplashScreen()
@@ -141,5 +149,10 @@ public class PlayerLapScore : MonoBehaviour
     private void BubblePop()
     {
         bubble.SetActive(false);
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("StartScreen");
     }
 }

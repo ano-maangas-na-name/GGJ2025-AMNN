@@ -12,17 +12,22 @@ public class spawnPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             player1.transform.position = spawnSoap.transform.position;
-        }
-        else if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            player2.transform.position = spawnSoda.transform.position;
+            player1.transform.localEulerAngles = spawnSoap.transform.localEulerAngles;
         }
         else if (Input.GetKeyDown(KeyCode.U))
         {
+            player2.transform.position = spawnSoda.transform.position;
+            player2.transform.localEulerAngles = spawnSoda.transform.localEulerAngles;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
             player3.transform.position = spawnGum.transform.position;
+            player3.transform.localEulerAngles = spawnGum.transform.localEulerAngles;
+
         }
     }
 }
